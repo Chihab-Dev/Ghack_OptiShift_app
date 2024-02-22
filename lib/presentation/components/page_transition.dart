@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomPageTransition extends PageRouteBuilder {
   final Widget widget;
-  final Alignment alignment;
 
-  CustomPageTransition({required this.widget, required this.alignment})
+  CustomPageTransition({required this.widget})
       : super(
           opaque: false,
           pageBuilder: (context, animation, secondaryAnimation) => widget,
@@ -22,7 +21,7 @@ class CustomPageTransition extends PageRouteBuilder {
             );
             return ScaleTransition(
               scale: animation,
-              alignment: alignment,
+              alignment: Alignment.bottomCenter,
               child: child,
             );
           },

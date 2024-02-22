@@ -7,6 +7,7 @@ import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/strings_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
+import 'package:ghack_app/presentation/screens/auth/screens/auth_screen.dart';
 
 class OnBoarding2View extends StatelessWidget {
   const OnBoarding2View({super.key});
@@ -44,8 +45,7 @@ class OnBoarding2View extends StatelessWidget {
                 const SizedBox(height: AppSize.s30),
                 FadeInLeft(
                   child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
                     child: Text(
                       AppStrings.appDesc2,
                       maxLines: 2,
@@ -56,12 +56,21 @@ class OnBoarding2View extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSize.s30),
                 FadeInRight(
-                    child: customElevatedButton(
-                        AppStrings.login, ColorManager.grey, () {})),
+                  child: customElevatedButton(AppStrings.login, ColorManager.grey, ColorManager.dark, () {
+                    Navigator.pushReplacement(
+                        context,
+                        // CustomPageTransition(
+                        //   widget: const AuthScreen(),
+                        // ),
+                        MaterialPageRoute(
+                          builder: (context) => const AuthScreen(),
+                        ));
+                  }),
+                ),
                 const SizedBox(height: AppSize.s20),
                 FadeInLeft(
-                    child: customElevatedButton(
-                        AppStrings.signin, ColorManager.green, () {})),
+                  child: customElevatedButton(AppStrings.signin, ColorManager.green, ColorManager.white, () {}),
+                ),
               ],
             ),
           ),

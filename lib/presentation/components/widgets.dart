@@ -4,8 +4,7 @@ import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 
-Widget customElevatedButton(
-    String label, Color backgroundColor, Function()? onPressed) {
+Widget customElevatedButton(String label, Color backgroundColor, Color textColor, Function()? onPressed) {
   return SizedBox(
     width: AppSize.s310.sp,
     height: AppSize.s50.sp,
@@ -19,8 +18,7 @@ Widget customElevatedButton(
         ),
         child: Text(
           label,
-          style:
-              getRegularStyle(color: ColorManager.dark).copyWith(fontSize: 24),
+          style: getRegularStyle(color: textColor).copyWith(fontSize: 24),
         )),
   );
 }
@@ -29,10 +27,10 @@ Widget customTextField(String hint, [bool obscure = false]) {
   return Container(
     width: AppSize.s310.sp, // Adjust the width as needed
     height: AppSize.s50.sp, // Adjust the height as needed
-    padding: EdgeInsets.symmetric(horizontal: 10.0),
+    padding: EdgeInsets.symmetric(horizontal: AppPadding.p10.sp),
     decoration: BoxDecoration(
-      color: Color.fromARGB(255, 250, 248, 248),
-      borderRadius: BorderRadius.circular(15.0),
+      color: ColorManager.white,
+      borderRadius: BorderRadius.circular(AppSize.s15),
     ),
     child: Center(
       child: TextField(
@@ -40,10 +38,7 @@ Widget customTextField(String hint, [bool obscure = false]) {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hint,
-          hintStyle: TextStyle(
-            color: Colors.grey,
-            fontSize: 16.0,
-          ),
+          hintStyle: getMeduimStyle(color: ColorManager.specielGrey),
         ),
       ),
     ),
