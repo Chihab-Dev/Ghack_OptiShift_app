@@ -7,8 +7,10 @@ environment:
   sdk: '>=3.2.6 <4.0.0'
 
 dependencies:
+  dartz: ^0.10.1
   flutter:
     sdk: flutter
+  get_it: ^7.6.7
 
 dev_dependencies:
   flutter_test:
