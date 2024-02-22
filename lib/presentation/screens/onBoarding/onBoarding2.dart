@@ -44,7 +44,8 @@ class OnBoarding2View extends StatelessWidget {
                 const SizedBox(height: AppSize.s30),
                 FadeInLeft(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: AppPadding.p8),
                     child: Text(
                       AppStrings.appDesc2,
                       maxLines: 2,
@@ -54,9 +55,13 @@ class OnBoarding2View extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AppSize.s30),
-                FadeInRight(child: customElevatodButton(AppStrings.login, ColorManager.grey, () {})),
+                FadeInRight(
+                    child: customElevatedButton(
+                        AppStrings.login, ColorManager.grey, () {})),
                 const SizedBox(height: AppSize.s20),
-                FadeInLeft(child: customElevatodButton(AppStrings.signin, ColorManager.green, () {})),
+                FadeInLeft(
+                    child: customElevatedButton(
+                        AppStrings.signin, ColorManager.green, () {})),
               ],
             ),
           ),
