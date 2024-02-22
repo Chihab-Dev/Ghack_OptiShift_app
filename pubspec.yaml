@@ -14,6 +14,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   get_it: ^7.6.7
   internet_connection_checker: ^1.0.0+1
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +26,4 @@ flutter:
 
   assets:
    - assets/images/
+   - assets/lottie/
