@@ -9,4 +9,5 @@ class ImageAsset {
 
 class LottieAsset {
   // static const String animation = "$lottiePath/animation.json";
+  static const String deliveryVan = "$lottiePath/delivery_van.json";
 }
