@@ -1,11 +1,15 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ghack_app/core/services/services_locator.dart';
+import 'package:ghack_app/core/services/shared_prefrences.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
+import 'package:ghack_app/presentation/components/page_transition.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
+import 'package:ghack_app/presentation/screens/main/view/main.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -59,7 +63,15 @@ class AuthScreen extends StatelessWidget {
                   const SizedBox(height: AppSize.s20),
                   FadeInRight(child: customTextField("Password", true)), // Spacer
                   const SizedBox(height: AppSize.s50), // Spacer
-                  FadeInLeft(child: customElevatedButton("Login", ColorManager.green, ColorManager.white, () => null)),
+                  FadeInLeft(
+                      child: customElevatedButton("Login", ColorManager.green, ColorManager.white, () {
+                    AppPrefernces(getIt()).setUserLoggedIn();
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      CustomPageTransition(widget: const MainView()),
+                      (route) => false,
+                    );
+                  })),
                   const SizedBox(height: AppSize.s20), // Spacer
                   FadeInUp(
                     child: TextButton(

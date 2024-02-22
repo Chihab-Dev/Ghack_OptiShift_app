@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ghack_app/core/services/services_locator.dart';
+import 'package:ghack_app/core/services/shared_prefrences.dart';
 import 'package:ghack_app/presentation/components/theme_manager.dart';
+import 'package:ghack_app/presentation/screens/auth/screens/auth_screen.dart';
+import 'package:ghack_app/presentation/screens/main/view/main.dart';
 import 'package:ghack_app/presentation/screens/onBoarding/onBoarding1.dart';
 
 void main() async {
@@ -24,6 +27,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppPrefernces apprefernces = AppPrefernces(getIt());
+
+    bool isUserWatchOnBoarding = apprefernces.isUserWatchOnBoarding();
+    bool isUserLoggedIn = apprefernces.isUserLoggedIn();
+
     return ScreenUtilInit(
       // emulator width and height (13 pro max )
       designSize: const Size(430, 932),
@@ -34,7 +42,11 @@ class MainApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: getApplicationTheme(),
-          home: const OnBoarding1View(),
+          home: isUserLoggedIn
+              ? const MainView()
+              : isUserWatchOnBoarding
+                  ? const AuthScreen()
+                  : const OnBoarding1View(),
         );
       },
     );

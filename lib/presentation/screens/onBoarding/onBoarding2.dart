@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ghack_app/core/services/services_locator.dart';
+import 'package:ghack_app/core/services/shared_prefrences.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
@@ -57,6 +59,7 @@ class OnBoarding2View extends StatelessWidget {
                 const SizedBox(height: AppSize.s30),
                 FadeInRight(
                   child: customElevatedButton(AppStrings.login, ColorManager.grey, ColorManager.dark, () {
+                    AppPrefernces(getIt()).setUserWatchOnBoarding();
                     Navigator.pushReplacement(
                         context,
                         // CustomPageTransition(
