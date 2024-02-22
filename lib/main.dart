@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ghack_app/core/services/services_locator.dart';
 import 'package:ghack_app/presentation/components/theme_manager.dart';
+import 'package:ghack_app/presentation/screens/onBoarding/onBoarding1.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,11 +34,7 @@ class MainApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: getApplicationTheme(),
-          home: const Scaffold(
-            body: Center(
-              child: Text('Hello World!'),
-            ),
-          ),
+          home: const OnBoarding1View(),
         );
       },
     );

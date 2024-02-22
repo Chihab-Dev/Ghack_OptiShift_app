@@ -21,7 +21,7 @@ TextStyle getSmallStyle({
 
 // Meduim Style
 TextStyle getMeduimStyle({
-  double fontSize = FontSize.s16,
+  double fontSize = FontSize.s15,
   required Color color,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.medium, color);
@@ -36,7 +36,14 @@ TextStyle getRegularStyle({
 }
 
 TextStyle getlargeStyle({
-  double fontSize = FontSize.s25,
+  double fontSize = FontSize.s35,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontWeightManager.bold, color);
+}
+
+TextStyle getVeryLargeStyle({
+  double fontSize = FontSize.s73,
   required Color color,
 }) {
   return _getTextStyle(fontSize, FontWeightManager.bold, color);
