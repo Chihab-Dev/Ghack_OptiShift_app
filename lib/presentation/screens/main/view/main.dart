@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
@@ -22,28 +23,34 @@ class MainView extends StatelessWidget {
         backgroundColor: ColorManager.white,
         elevation: 0.0,
         centerTitle: true,
-        title: Text(
-          item.title,
-          style: getRegularStyle(color: ColorManager.dark).copyWith(fontSize: AppSize.s25),
+        title: FadeInDown(
+          child: Text(
+            item.title,
+            style: getRegularStyle(color: ColorManager.dark).copyWith(fontSize: AppSize.s25),
+          ),
         ),
-        leading: IconButton(
-          onPressed: () {
-            ZoomDrawer.of(context)!.toggle();
-          },
-          icon: SizedBox(
-            width: AppSize.s25,
-            height: AppSize.s25,
-            child: Image.asset(
-              ImageAsset.menu,
+        leading: FadeInLeft(
+          child: IconButton(
+            onPressed: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
+            icon: SizedBox(
+              width: AppSize.s25,
+              height: AppSize.s25,
+              child: Image.asset(
+                ImageAsset.menu,
+              ),
             ),
           ),
         ),
         actions: [
-          SizedBox(
-            width: AppSize.s40,
-            height: AppSize.s40,
-            child: Image.asset(
-              ImageAsset.picture,
+          FadeInRight(
+            child: SizedBox(
+              width: AppSize.s40,
+              height: AppSize.s40,
+              child: Image.asset(
+                ImageAsset.picture,
+              ),
             ),
           ),
           const SizedBox(width: AppPadding.p14),

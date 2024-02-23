@@ -61,7 +61,7 @@ class DrawerView extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Image.asset(ImageAsset.picture),
-                              const SizedBox(height: AppSize.s18),
+                              const SizedBox(height: AppSize.s20),
                               Padding(
                                 padding: const EdgeInsets.only(left: AppPadding.p25),
                                 child: Text(
@@ -70,7 +70,7 @@ class DrawerView extends StatelessWidget {
                                       .copyWith(fontWeight: FontWeight.bold, fontSize: AppSize.s25),
                                 ),
                               ),
-                              const SizedBox(height: AppSize.s18),
+                              const SizedBox(height: AppSize.s30),
                               menuItemContainer(MenuItems.orders, context),
                               menuItemContainer(MenuItems.myAccount, context),
                               menuItemContainer(MenuItems.notification, context),

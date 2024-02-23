@@ -15,11 +15,13 @@ enum DeliveryRequestState {
 }
 
 class DeliveryRequest {
+  String deliveryId;
   DeliveryRequestState deliveryRequestState;
   Product product;
   Client client;
   DeliveryMan deliveryMan;
   DeliveryRequest({
+    required this.deliveryId,
     required this.deliveryRequestState,
     required this.product,
     required this.client,
@@ -28,6 +30,7 @@ class DeliveryRequest {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'deliveryId': deliveryId,
       'product': product.toMap(),
       'client': client.toMap(),
       'deliveryMan': deliveryMan.toMap(),
@@ -36,6 +39,7 @@ class DeliveryRequest {
 
   factory DeliveryRequest.fromMap(Map<String, dynamic> map) {
     return DeliveryRequest(
+      deliveryId: map['deliveryId'],
       deliveryRequestState: DeliveryRequestState.WAITING,
       product: Product.fromMap(map['product'] as Map<String, dynamic>),
       client: Client.fromMap(map['client'] as Map<String, dynamic>),
