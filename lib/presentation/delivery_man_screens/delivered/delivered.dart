@@ -37,7 +37,7 @@ class DeliveredView extends StatelessWidget {
               ),
             ),
             body: Padding(
-              padding: const EdgeInsets.all(AppPadding.p30),
+              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p30),
               child: Container(
                 // height: 600,
                 decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class DeliveredView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 300,
+                          height: 350,
                           child: Lottie.asset(LottieAsset.delivered),
                         ),
                         Text(

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ghack_app/core/services/services_locator.dart';
 import 'package:ghack_app/core/services/shared_prefrences.dart';
+import 'package:ghack_app/presentation/client_screens/drawer/view/zoom_drawer.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
-import 'package:ghack_app/presentation/components/page_transition.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
-import 'package:ghack_app/presentation/client_screens/drawer/view/drawer.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -67,11 +66,11 @@ class AuthScreen extends StatelessWidget {
                       child: customElevatedButton("Login", ColorManager.green, ColorManager.white, () {
                     AppPrefernces(getIt()).setUserLoggedIn();
                     Navigator.pushAndRemoveUntil(
-                      context,
-                      CustomPageTransition(
-                          widget: DrawerView(currentItem: MenuItems.orders, onSelectedItem: (item) {})),
-                      (route) => false,
-                    );
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ZoomDrawerView(),
+                        ),
+                        (route) => false);
                   })),
                   const SizedBox(height: AppSize.s20), // Spacer
                   FadeInUp(

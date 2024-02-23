@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:ghack_app/presentation/client_screens/my_account/view/my_acount.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
@@ -68,7 +69,33 @@ class DrawerView extends StatelessWidget {
                             ),
                             const SizedBox(height: AppSize.s30),
                             menuItemContainer(MenuItems.orders, context),
-                            menuItemContainer(MenuItems.myAccount, context),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const MyAccountView(),
+                                    ));
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(AppPadding.p8),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const Icon(
+                                      Icons.person_outline_rounded,
+                                      size: AppSize.s35,
+                                    ),
+                                    const SizedBox(width: AppSize.s10),
+                                    Text(
+                                      'My account',
+                                      style: getRegularStyle(color: ColorManager.dark)
+                                          .copyWith(fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                             menuItemContainer(MenuItems.notification, context),
                             menuItemContainer(MenuItems.settings, context),
                             customSectionButton('Contact us', Icons.help_outline, context),
