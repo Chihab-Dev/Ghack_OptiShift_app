@@ -238,7 +238,7 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
   ];
   @override
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 4, vsync: this);
+    TabController tabController = TabController(length: 7, vsync: this);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -269,10 +269,8 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
         ),
         TabBar(
           controller: tabController,
-
-          // isScrollable: true,
+          isScrollable: true,
           automaticIndicatorColorAdjustment: true,
-          labelPadding: const EdgeInsets.all(0),
           tabs: [
             Tab(
               child: Text(
@@ -295,6 +293,24 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
             Tab(
               child: Text(
                 'Delivered',
+                style: getMeduimStyle(color: ColorManager.dark),
+              ),
+            ),
+            Tab(
+              child: Text(
+                "ON IT'S WAY",
+                style: getMeduimStyle(color: ColorManager.dark),
+              ),
+            ),
+            Tab(
+              child: Text(
+                "Charged",
+                style: getMeduimStyle(color: ColorManager.dark),
+              ),
+            ),
+            Tab(
+              child: Text(
+                "Returned",
                 style: getMeduimStyle(color: ColorManager.dark),
               ),
             ),
@@ -343,6 +359,9 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.WAITING)),
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.ACCEPTED)),
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.DELIVERED)),
+              OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.ON_ITS_WAY)),
+              OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.CHARGED)),
+              OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.RETURNED)),
             ],
           ),
         ),
@@ -410,41 +429,48 @@ Text deliveryRequestStateToString(DeliveryRequestState state) {
     case DeliveryRequestState.WAITING:
       return Text(
         'WAITING',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.yellow),
       );
     case DeliveryRequestState.ACCEPTED:
       return Text(
         'ACCEPTED',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.green),
       );
 
     case DeliveryRequestState.CHARGED:
       return Text(
         'CHARGED',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.dark),
       );
 
     case DeliveryRequestState.ON_ITS_WAY:
       return Text(
-        'ON_ITS_WAY',
+        'ON ITS WAY',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.blue),
       );
 
     case DeliveryRequestState.DELIVERED:
       return Text(
         'DELIVERED',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.green),
       );
 
     case DeliveryRequestState.RETURNED:
       return Text(
         'RETURNED',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.red),
       );
 
     default:
       return Text(
         'WAITING',
+        textAlign: TextAlign.left,
         style: getMeduimStyle(color: ColorManager.dark),
       );
     // You can set the color as needed

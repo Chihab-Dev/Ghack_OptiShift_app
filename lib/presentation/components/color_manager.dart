@@ -4,7 +4,7 @@ class ColorManager {
   // static Color color = const Color(0xffCOLORCODE);
   static Color yellow = const Color(0xffFFC718);
   static Color darkYellow = const Color(0xffFFDA7D);
-  static Color darkYellow2 = const Color(0xffAC7D0B);
+  static Color darkYellow2 = const Color.fromARGB(255, 150, 107, 6);
   static Color white = const Color(0xffFFFFFF);
   static Color dark = const Color(0xff000000);
   static Color lightDark = const Color(0xff272424);
