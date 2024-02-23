@@ -13,6 +13,7 @@ class ImageAsset {
   static const String menu = "$imagePath/menu.png";
 
   // delivery
+  static const String picture2 = "$imagePath/picture2.png";
   static const String deliveryBackground = "$imagePath/delivery_background.png";
   static const String deliveryEllipse = "$imagePath/delivery_ellipse.png";
   static const String deliveryMap = "$imagePath/delivery_map.png";
@@ -25,5 +26,7 @@ class ImageAsset {
 
 class LottieAsset {
   // static const String animation = "$lottiePath/animation.json";
-  static const String deliveryVan = "$lottiePath/delivery_van.json";
+  static const String truckDelivery = "$lottiePath/truck_delivery.json";
+  static const String delivered = "$lottiePath/delivered.json";
+  static const String canceled = "$lottiePath/canceled.json";
 }

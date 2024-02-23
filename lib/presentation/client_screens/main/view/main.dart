@@ -1,15 +1,15 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:ghack_app/presentation/components/appsize.dart';
-import 'package:ghack_app/presentation/components/assets_manager.dart';
-import 'package:ghack_app/presentation/components/color_manager.dart';
-import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/client_screens/drawer/view/drawer.dart';
 import 'package:ghack_app/presentation/client_screens/my_account/view/my_acount.dart';
 import 'package:ghack_app/presentation/client_screens/notifications/view/notifications.dart';
 import 'package:ghack_app/presentation/client_screens/orders/view/orders.dart';
 import 'package:ghack_app/presentation/client_screens/settings/view/settings.dart';
+import 'package:ghack_app/presentation/components/appsize.dart';
+import 'package:ghack_app/presentation/components/assets_manager.dart';
+import 'package:ghack_app/presentation/components/color_manager.dart';
+import 'package:ghack_app/presentation/components/styles_manager.dart';
 
 class MainView extends StatelessWidget {
   final MenuItem item;
@@ -26,7 +26,7 @@ class MainView extends StatelessWidget {
         title: FadeInDown(
           child: Text(
             item.title,
-            style: getRegularStyle(color: ColorManager.dark).copyWith(fontSize: AppSize.s25),
+            style: getRegularStyle(color: ColorManager.dark).copyWith(fontSize: AppSize.s30),
           ),
         ),
         leading: FadeInLeft(
@@ -35,8 +35,8 @@ class MainView extends StatelessWidget {
               ZoomDrawer.of(context)!.toggle();
             },
             icon: SizedBox(
-              width: AppSize.s25,
-              height: AppSize.s25,
+              width: AppSize.s50,
+              height: AppSize.s50,
               child: Image.asset(
                 ImageAsset.menu,
               ),
@@ -46,8 +46,8 @@ class MainView extends StatelessWidget {
         actions: [
           FadeInRight(
             child: SizedBox(
-              width: AppSize.s40,
-              height: AppSize.s40,
+              width: AppSize.s50,
+              height: AppSize.s50,
               child: Image.asset(
                 ImageAsset.picture,
               ),

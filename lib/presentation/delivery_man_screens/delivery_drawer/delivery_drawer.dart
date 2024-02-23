@@ -5,6 +5,7 @@ import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
+import 'package:ghack_app/presentation/delivery_man_screens/feedback/feedback.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class DeliveryMenuItems {
@@ -57,12 +58,12 @@ class DeliveryDrawerView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Image.asset(ImageAsset.picture),
+                              Image.asset(ImageAsset.picture2),
                               const SizedBox(height: AppSize.s20),
                               Padding(
                                 padding: const EdgeInsets.only(left: AppPadding.p25),
                                 child: Text(
-                                  'Goat tech',
+                                  'Anis kels',
                                   style: getRegularStyle(color: ColorManager.dark)
                                       .copyWith(fontWeight: FontWeight.bold, fontSize: AppSize.s25),
                                 ),
@@ -79,7 +80,13 @@ class DeliveryDrawerView extends StatelessWidget {
                                     : throw "can't launch URL $googleUrl";
                               }, context),
                               menuItemContainer(DeliveryMenuItems.myAccount, null, context),
-                              menuItemContainer(DeliveryMenuItems.notification, null, context),
+                              menuItemContainer(DeliveryMenuItems.notification, () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const FeedbackView(),
+                                    ));
+                              }, context),
                               menuItemContainer(DeliveryMenuItems.settings, null, context),
                               customSectionButton('Contact us', Icons.help_outline, context),
                             ],

@@ -5,6 +5,9 @@ import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
+import 'package:ghack_app/presentation/delivery_man_screens/delivered/delivered.dart';
+import 'package:ghack_app/presentation/delivery_man_screens/feedback/feedback.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -31,8 +34,8 @@ class _DeliveryMainViewState extends State<DeliveryMainView> {
             ZoomDrawer.of(context)!.toggle();
           },
           icon: SizedBox(
-            width: AppSize.s25,
-            height: AppSize.s25,
+            width: AppSize.s50,
+            height: AppSize.s50,
             child: Image.asset(
               ImageAsset.menu,
             ),
@@ -40,23 +43,26 @@ class _DeliveryMainViewState extends State<DeliveryMainView> {
         ),
         actions: [
           SizedBox(
-            width: AppSize.s40,
-            height: AppSize.s40,
+            width: AppSize.s50,
+            height: AppSize.s50,
             child: Image.asset(
-              ImageAsset.picture,
+              ImageAsset.picture2,
             ),
           ),
           const SizedBox(width: AppPadding.p14),
         ],
       ),
-      body: SizedBox(
-        width: double.infinity,
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              ImageAsset.deliveryMainImage,
+            // Image.asset(
+            //   ImageAsset.deliveryMainImage,
+            // ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p10),
+              child: Lottie.asset(LottieAsset.truckDelivery),
             ),
-            const SizedBox(height: AppSize.s50),
+            const SizedBox(height: AppSize.s20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -92,7 +98,7 @@ class _DeliveryMainViewState extends State<DeliveryMainView> {
                               ),
                               child: Text(
                                 'Start Now',
-                                style: getRegularStyle(color: ColorManager.dark).copyWith(fontSize: 24),
+                                style: getRegularStyle(color: ColorManager.red).copyWith(fontSize: 24),
                               ),
                             )
                           : Column(
@@ -142,6 +148,71 @@ class _DeliveryMainViewState extends State<DeliveryMainView> {
                   ? await launchUrlString(googleUrl)
                   : throw "can't launch URL $googleUrl";
             }),
+            const SizedBox(height: AppSize.s12),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DeliveredView(),
+                          ));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: ColorManager.green,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(AppPadding.p12),
+                        child: Center(
+                          child: Text(
+                            'Delivered',
+                            style: getlargeStyle(color: ColorManager.white).copyWith(fontSize: 25),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FeedbackView(),
+                          ));
+                    },
+                    child: Container(
+                      width: 150,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: ColorManager.red,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(AppPadding.p12),
+                        child: Center(
+                          child: Text(
+                            'Canceled',
+                            style: getlargeStyle(color: ColorManager.white).copyWith(fontSize: 25),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

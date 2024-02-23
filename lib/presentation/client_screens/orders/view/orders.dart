@@ -5,6 +5,7 @@ import 'package:ghack_app/domain/entities/client.dart';
 import 'package:ghack_app/domain/entities/delivery_man.dart';
 import 'package:ghack_app/domain/entities/delivery_request.dart';
 import 'package:ghack_app/domain/entities/product.dart';
+import 'package:ghack_app/presentation/client_screens/order_state/order_state_view.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
@@ -128,6 +129,114 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
       ),
     ),
     DeliveryRequest(
+      deliveryId: '34785',
+      deliveryRequestState: DeliveryRequestState.DELIVERED,
+      product: Product(
+        name: 'laptop',
+        description: 'hsdlk fasldjfasd ;kasdjf',
+        height: 20.0,
+        width: 20.0,
+        length: 20.0,
+        weight: 20.0,
+      ),
+      client: Client(
+        mapCoordinates: 'coordinates',
+        name: 'Kamel',
+        adress: 'kdka',
+        phone: '0457832442',
+        birthDay: DateTime.now(),
+        email: 'chihab@gmai.com',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+      deliveryMan: DeliveryMan(
+        mapCoordinates: 'mapCoordinates',
+        name: 'Nabil',
+        adress: 'adress',
+        phone: '0239483',
+        birthDay: DateTime.now(),
+        email: 'email',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+    ),
+    DeliveryRequest(
+      deliveryId: '34785',
+      deliveryRequestState: DeliveryRequestState.ON_ITS_WAY,
+      product: Product(
+        name: 'laptop',
+        description: 'hsdlk fasldjfasd ;kasdjf',
+        height: 20.0,
+        width: 20.0,
+        length: 20.0,
+        weight: 20.0,
+      ),
+      client: Client(
+        mapCoordinates: 'coordinates',
+        name: 'GDG',
+        adress: 'kdka',
+        phone: '0457832442',
+        birthDay: DateTime.now(),
+        email: 'chihab@gmai.com',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+      deliveryMan: DeliveryMan(
+        mapCoordinates: 'mapCoordinates',
+        name: 'Nabil',
+        adress: 'adress',
+        phone: '0239483',
+        birthDay: DateTime.now(),
+        email: 'email',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+    ),
+    DeliveryRequest(
+      deliveryId: '34785',
+      deliveryRequestState: DeliveryRequestState.ACCEPTED,
+      product: Product(
+        name: 'laptop',
+        description: 'hsdlk fasldjfasd ;kasdjf',
+        height: 20.0,
+        width: 20.0,
+        length: 20.0,
+        weight: 20.0,
+      ),
+      client: Client(
+        mapCoordinates: 'coordinates',
+        name: 'Youcef',
+        adress: 'kdka',
+        phone: '0457832442',
+        birthDay: DateTime.now(),
+        email: 'chihab@gmai.com',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+      deliveryMan: DeliveryMan(
+        mapCoordinates: 'mapCoordinates',
+        name: 'Nabil',
+        adress: 'adress',
+        phone: '0239483',
+        birthDay: DateTime.now(),
+        email: 'email',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+    ),
+    DeliveryRequest(
       deliveryId: '88342',
       deliveryRequestState: DeliveryRequestState.DELIVERED,
       product: Product(
@@ -177,6 +286,78 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
       client: Client(
         mapCoordinates: 'coordinates',
         name: 'Chihab',
+        adress: 'kdka',
+        phone: '0457832442',
+        birthDay: DateTime.now(),
+        email: 'chihab@gmai.com',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+      deliveryMan: DeliveryMan(
+        mapCoordinates: 'mapCoordinates',
+        name: 'Nabil',
+        adress: 'adress',
+        phone: '0239483',
+        birthDay: DateTime.now(),
+        email: 'email',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+    ),
+    DeliveryRequest(
+      deliveryId: '63842',
+      deliveryRequestState: DeliveryRequestState.DELIVERED,
+      product: Product(
+        name: 'laptop',
+        description: 'hsdlk fasldjfasd ;kasdjf',
+        height: 20.0,
+        width: 20.0,
+        length: 20.0,
+        weight: 20.0,
+      ),
+      client: Client(
+        mapCoordinates: 'coordinates',
+        name: 'Macids',
+        adress: 'kdka',
+        phone: '0457832442',
+        birthDay: DateTime.now(),
+        email: 'chihab@gmai.com',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+      deliveryMan: DeliveryMan(
+        mapCoordinates: 'mapCoordinates',
+        name: 'Nabil',
+        adress: 'adress',
+        phone: '0239483',
+        birthDay: DateTime.now(),
+        email: 'email',
+        password: 'password',
+        image: 'image',
+        identifyCard: 'identifyCard',
+        feedbackList: [],
+      ),
+    ),
+    DeliveryRequest(
+      deliveryId: '63842',
+      deliveryRequestState: DeliveryRequestState.WAITING,
+      product: Product(
+        name: 'laptop',
+        description: 'hsdlk fasldjfasd ;kasdjf',
+        height: 20.0,
+        width: 20.0,
+        length: 20.0,
+        weight: 20.0,
+      ),
+      client: Client(
+        mapCoordinates: 'coordinates',
+        name: 'Ayoub',
         adress: 'kdka',
         phone: '0457832442',
         birthDay: DateTime.now(),
@@ -355,7 +536,7 @@ class _OrdersViewState extends State<OrdersView> with TickerProviderStateMixin {
           child: TabBarView(
             controller: tabController,
             children: [
-              OrdersListView(orders: orders + orders),
+              OrdersListView(orders: orders),
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.WAITING)),
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.ACCEPTED)),
               OrdersListView(orders: getOrdersByState(orders, DeliveryRequestState.DELIVERED)),
@@ -386,31 +567,40 @@ class OrdersListView extends StatelessWidget {
         var order = orders[index];
         return Padding(
           padding: const EdgeInsets.all(AppPadding.p10),
-          child: Container(
-            width: double.infinity,
-            height: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppSize.s10),
-              border: Border.all(
-                color: ColorManager.lightGrey,
-                width: 1.0,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OrderStateView(),
+                  ));
+            },
+            child: Container(
+              width: double.infinity,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(AppSize.s10),
+                border: Border.all(
+                  color: ColorManager.lightGrey,
+                  width: 1.0,
+                ),
               ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(AppPadding.p12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    order.deliveryId,
-                    style: getMeduimStyle(color: ColorManager.dark),
-                  ),
-                  Text(
-                    order.client.name,
-                    style: getMeduimStyle(color: ColorManager.dark),
-                  ),
-                  deliveryRequestStateToString(order.deliveryRequestState),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(AppPadding.p12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      order.deliveryId,
+                      style: getMeduimStyle(color: ColorManager.dark),
+                    ),
+                    Text(
+                      order.client.name,
+                      style: getMeduimStyle(color: ColorManager.dark),
+                    ),
+                    deliveryRequestStateToString(order.deliveryRequestState),
+                  ],
+                ),
               ),
             ),
           ),
