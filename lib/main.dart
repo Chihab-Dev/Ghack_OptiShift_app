@@ -36,7 +36,7 @@ class MainApp extends StatelessWidget {
     // apprefernces.removeUserLoggedIn();
     // apprefernces.removeUserWatchOnBoarding();
 
-    const bool isUserClient = true;
+    const bool isUserClient = false;
 
     return ScreenUtilInit(
       // emulator width and height (13 pro max )

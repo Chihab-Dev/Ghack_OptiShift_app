@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ghack_app/core/services/services_locator.dart';
 import 'package:ghack_app/core/services/shared_prefrences.dart';
-import 'package:ghack_app/presentation/client_screens/drawer/view/zoom_drawer.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
+import 'package:ghack_app/presentation/delivery_man_screens/delivery_drawer/delivery_zoom_drawer.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -68,7 +68,7 @@ class AuthScreen extends StatelessWidget {
                     Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ZoomDrawerView(),
+                          builder: (context) => const DeliveryZoomDrawer(),
                         ),
                         (route) => false);
                   })),
