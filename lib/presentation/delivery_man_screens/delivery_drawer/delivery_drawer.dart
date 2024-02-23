@@ -1,32 +1,29 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
-class MenuItems {
-  static const orders = MenuItem('Orders', Icons.fire_truck_outlined);
-  static const myAccount = MenuItem('My account', Icons.person_outline_sharp);
-  static const notification = MenuItem('Notifications', Icons.notifications_none);
-  static const settings = MenuItem('Settings', Icons.settings);
+class DeliveryMenuItems {
+  static const orders = DeliveryMenuItem('Orders', Icons.fire_truck_outlined);
+  static const map = DeliveryMenuItem('Map', Icons.map_outlined);
+  static const myAccount = DeliveryMenuItem('My account', Icons.person_outline_sharp);
+  static const notification = DeliveryMenuItem('Notifications', Icons.notifications_none);
+  static const settings = DeliveryMenuItem('Settings', Icons.settings);
 }
 
-class MenuItem {
+class DeliveryMenuItem {
   final String title;
   final IconData icon;
-  const MenuItem(this.title, this.icon);
+  const DeliveryMenuItem(this.title, this.icon);
 }
 
-class DrawerView extends StatelessWidget {
-  final MenuItem currentItem;
-  final ValueChanged<MenuItem> onSelectedItem;
-  const DrawerView({
+class DeliveryDrawerView extends StatelessWidget {
+  const DeliveryDrawerView({
     Key? key,
-    required this.currentItem,
-    required this.onSelectedItem,
   }) : super(key: key);
 
   @override
@@ -71,10 +68,19 @@ class DrawerView extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: AppSize.s30),
-                              menuItemContainer(MenuItems.orders, context),
-                              menuItemContainer(MenuItems.myAccount, context),
-                              menuItemContainer(MenuItems.notification, context),
-                              menuItemContainer(MenuItems.settings, context),
+                              menuItemContainer(DeliveryMenuItems.orders, null, context),
+                              menuItemContainer(DeliveryMenuItems.map, () async {
+                                String googleUrl = "https://www.google.com/maps/search/?api=1&query=37.7749,-122.4194";
+
+                                print(googleUrl);
+
+                                await canLaunchUrlString(googleUrl)
+                                    ? await launchUrlString(googleUrl)
+                                    : throw "can't launch URL $googleUrl";
+                              }, context),
+                              menuItemContainer(DeliveryMenuItems.myAccount, null, context),
+                              menuItemContainer(DeliveryMenuItems.notification, null, context),
+                              menuItemContainer(DeliveryMenuItems.settings, null, context),
                               customSectionButton('Contact us', Icons.help_outline, context),
                             ],
                           ),
@@ -82,12 +88,10 @@ class DrawerView extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    FadeInRight(
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          ImageAsset.rectangleYellow,
-                        ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Image.asset(
+                        ImageAsset.rectangleYellow,
                       ),
                     ),
                   ],
@@ -103,17 +107,13 @@ class DrawerView extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: AppPadding.p35),
-                      child: FadeInUp(
-                        child: customSectionButton('Logout   ', Icons.logout_outlined, context),
-                      ),
+                      child: customSectionButton('Logout   ', Icons.logout_outlined, context),
                     ),
                     const Spacer(),
-                    FadeInRight(
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Image.asset(
-                          ImageAsset.rectangleGrey,
-                        ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Image.asset(
+                        ImageAsset.rectangleGrey,
                       ),
                     ),
                   ],
@@ -126,12 +126,9 @@ class DrawerView extends StatelessWidget {
     );
   }
 
-  Widget menuItemContainer(MenuItem item, BuildContext context) {
+  Widget menuItemContainer(DeliveryMenuItem item, Function()? onTap, BuildContext context) {
     return InkWell(
-      onTap: () {
-        onSelectedItem(item);
-        ZoomDrawer.of(context)!.close();
-      },
+      onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.all(AppPadding.p8),
         child: Row(

@@ -9,7 +9,7 @@ import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/page_transition.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
-import 'package:ghack_app/presentation/screens/drawer/view/drawer.dart';
+import 'package:ghack_app/presentation/client_screens/drawer/view/drawer.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});

@@ -5,11 +5,11 @@ import 'package:ghack_app/presentation/components/appsize.dart';
 import 'package:ghack_app/presentation/components/assets_manager.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
-import 'package:ghack_app/presentation/screens/drawer/view/drawer.dart';
-import 'package:ghack_app/presentation/screens/my_account/view/my_acount.dart';
-import 'package:ghack_app/presentation/screens/notifications/view/notifications.dart';
-import 'package:ghack_app/presentation/screens/orders/view/orders.dart';
-import 'package:ghack_app/presentation/screens/settings/view/settings.dart';
+import 'package:ghack_app/presentation/client_screens/drawer/view/drawer.dart';
+import 'package:ghack_app/presentation/client_screens/my_account/view/my_acount.dart';
+import 'package:ghack_app/presentation/client_screens/notifications/view/notifications.dart';
+import 'package:ghack_app/presentation/client_screens/orders/view/orders.dart';
+import 'package:ghack_app/presentation/client_screens/settings/view/settings.dart';
 
 class MainView extends StatelessWidget {
   final MenuItem item;

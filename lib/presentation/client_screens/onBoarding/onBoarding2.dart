@@ -9,7 +9,7 @@ import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/strings_manager.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
-import 'package:ghack_app/presentation/screens/auth/screens/auth_screen.dart';
+import 'package:ghack_app/presentation/client_screens/auth/screens/auth_screen.dart';
 
 class OnBoarding2View extends StatelessWidget {
   const OnBoarding2View({super.key});

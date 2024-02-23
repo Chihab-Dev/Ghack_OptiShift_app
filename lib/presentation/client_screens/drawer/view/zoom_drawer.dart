@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:ghack_app/presentation/components/color_manager.dart';
-import 'package:ghack_app/presentation/screens/drawer/view/drawer.dart';
-import 'package:ghack_app/presentation/screens/main/view/main.dart';
+import 'package:ghack_app/presentation/client_screens/drawer/view/drawer.dart';
+import 'package:ghack_app/presentation/client_screens/main/view/main.dart';
 
 class ZoomDrawerView extends StatefulWidget {
   const ZoomDrawerView({super.key});
