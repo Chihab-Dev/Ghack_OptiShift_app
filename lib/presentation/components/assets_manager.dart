@@ -6,6 +6,10 @@ class ImageAsset {
   static const String backgroundImage = "$imagePath/background_image.png";
   static const String onBoarding = "$imagePath/onBoarding.png";
   static const String login = "$imagePath/login.png";
+  static const String ellipse = "$imagePath/ellipse.png";
+  static const String rectangleGrey = "$imagePath/rectangle_grey.png";
+  static const String rectangleYellow = "$imagePath/rectangle_yellow.png";
+  static const String picture = "$imagePath/picture.png";
 }
 
 class LottieAsset {

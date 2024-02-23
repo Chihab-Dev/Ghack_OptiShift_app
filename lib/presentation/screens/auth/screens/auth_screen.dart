@@ -9,7 +9,7 @@ import 'package:ghack_app/presentation/components/color_manager.dart';
 import 'package:ghack_app/presentation/components/page_transition.dart';
 import 'package:ghack_app/presentation/components/styles_manager.dart';
 import 'package:ghack_app/presentation/components/widgets.dart';
-import 'package:ghack_app/presentation/screens/main/view/main.dart';
+import 'package:ghack_app/presentation/screens/drawer/view/drawer.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -68,7 +68,7 @@ class AuthScreen extends StatelessWidget {
                     AppPrefernces(getIt()).setUserLoggedIn();
                     Navigator.pushAndRemoveUntil(
                       context,
-                      CustomPageTransition(widget: const MainView()),
+                      CustomPageTransition(widget: const DrawerView()),
                       (route) => false,
                     );
                   })),
