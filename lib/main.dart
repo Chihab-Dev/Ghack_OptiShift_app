@@ -5,7 +5,7 @@ import 'package:ghack_app/core/services/services_locator.dart';
 import 'package:ghack_app/core/services/shared_prefrences.dart';
 import 'package:ghack_app/presentation/components/theme_manager.dart';
 import 'package:ghack_app/presentation/screens/auth/screens/auth_screen.dart';
-import 'package:ghack_app/presentation/screens/drawer/view/drawer.dart';
+import 'package:ghack_app/presentation/screens/drawer/view/zoom_drawer.dart';
 import 'package:ghack_app/presentation/screens/onBoarding/onBoarding1.dart';
 
 void main() async {
@@ -43,7 +43,7 @@ class MainApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: getApplicationTheme(),
           home: isUserLoggedIn
-              ? const DrawerView()
+              ? const ZoomDrawerView()
               : isUserWatchOnBoarding
                   ? const AuthScreen()
                   : const OnBoarding1View(),

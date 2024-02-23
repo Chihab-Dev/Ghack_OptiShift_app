@@ -68,7 +68,8 @@ class AuthScreen extends StatelessWidget {
                     AppPrefernces(getIt()).setUserLoggedIn();
                     Navigator.pushAndRemoveUntil(
                       context,
-                      CustomPageTransition(widget: const DrawerView()),
+                      CustomPageTransition(
+                          widget: DrawerView(currentItem: MenuItems.orders, onSelectedItem: (item) {})),
                       (route) => false,
                     );
                   })),

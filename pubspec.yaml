@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.0
+  flutter_zoom_drawer: ^3.1.2
   get_it: ^7.6.7
   internet_connection_checker: ^1.0.0+1
   lottie: ^3.1.0
