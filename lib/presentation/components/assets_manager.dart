@@ -10,6 +10,7 @@ class ImageAsset {
   static const String rectangleGrey = "$imagePath/rectangle_grey.png";
   static const String rectangleYellow = "$imagePath/rectangle_yellow.png";
   static const String picture = "$imagePath/picture.png";
+  static const String menu = "$imagePath/menu.png";
 }
 
 class LottieAsset {

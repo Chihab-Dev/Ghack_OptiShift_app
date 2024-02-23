@@ -12,14 +12,6 @@ class MenuItems {
   static const myAccount = MenuItem('My account', Icons.person_outline_sharp);
   static const notification = MenuItem('Notifications', Icons.notifications_none);
   static const settings = MenuItem('Settings', Icons.settings);
-  static const contactUs = MenuItem('Contact us', Icons.help_outline);
-
-  static const all = <MenuItem>[
-    myAccount,
-    notification,
-    settings,
-    contactUs,
-  ];
 }
 
 class MenuItem {
@@ -29,9 +21,9 @@ class MenuItem {
 }
 
 class DrawerView extends StatelessWidget {
-  MenuItem currentItem;
+  final MenuItem currentItem;
   final ValueChanged<MenuItem> onSelectedItem;
-  DrawerView({
+  const DrawerView({
     Key? key,
     required this.currentItem,
     required this.onSelectedItem,
@@ -82,7 +74,8 @@ class DrawerView extends StatelessWidget {
                               menuItemContainer(MenuItems.orders, context),
                               menuItemContainer(MenuItems.myAccount, context),
                               menuItemContainer(MenuItems.notification, context),
-                              menuItemContainer(MenuItems.contactUs, context),
+                              menuItemContainer(MenuItems.settings, context),
+                              customSectionButton('Contact us', Icons.help_outline, context),
                             ],
                           ),
                         ),
@@ -110,7 +103,9 @@ class DrawerView extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: AppPadding.p35),
-                      child: FadeInUp(child: customSectionButton('Logout   ', Icons.logout_outlined, context)),
+                      child: FadeInUp(
+                        child: customSectionButton('Logout   ', Icons.logout_outlined, context),
+                      ),
                     ),
                     const Spacer(),
                     FadeInRight(
